@@ -1,0 +1,20 @@
+Version: '4.0'
+Type: NeuralNetwork
+Engine: torch
+Name: DISA-LC2
+Description: Model used for MICCAI 2023, half precision
+ModelFile: model.pt
+ForceCPU: false
+Verbose: false
+PredictionOutput: Image
+BatchSize: -1
+
+PreProcessing:
+  - MakeFloat: {}
+  - NormalizeNormal: {}
+
+Sampling:
+  padding: 16
+  maxPatchSize: 384
+  downsampling: 4
+  batchSize: 1
